@@ -1,0 +1,19 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+	<div class="container mt-4">
+		{% if option.id %}
+			<h2 class="mb-4">Editer l'option</h2>
+		{% else %}
+			<h2 class="mb-4">Ajouter une option</h2>
+		{% endif %}
+		{{ form_start(form) }}
+		{{ form_widget(form) }}
+		{% if option.id %}
+			<button class="btn btn-success">Editer</button>
+		{% else %}
+			<button class="btn btn-primary">Enregistrer</button>
+		{% endif %}
+		{{ form_end(form) }}
+	</div>
+{% endblock %}
